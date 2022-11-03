@@ -522,11 +522,16 @@ margin-bottom: 9px;
     transform: translateY(-50%);
     fill: var(--bg-color-white);
 }
-
-/* .footer-button {
+.footer-button {
     width: 200px;
-    position: relative;
-    } */
+    padding: 0;
+}
+.footer-button::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;    
+}
 
 /* Portfolio section */
 .filter-container {
@@ -698,6 +703,10 @@ border-right: 1px solid #EEEEEE;
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     padding: 0;
+    
+}
+.close-icon {
+    transition: fill var(--transition-duration) var(--timing-function);
 }
 
 .close-button:hover .close-icon {
@@ -720,10 +729,12 @@ border-right: 1px solid #EEEEEE;
 
 .form-input {
     width: 100%;
+    height: 40px;
     padding: 12px 12px 12px 42px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     outline: none;
+    transition: border-color var(--transition-duration) var(--timing-function);
     /* margin-bottom: 10px; */
 }
 
@@ -738,7 +749,9 @@ border-right: 1px solid #EEEEEE;
     top: 50%;
     transform: translateY(-50%);
     fill: currentColor;
+    transition: fill var(--transition-duration) var(--timing-function);
 }
+
 .form-control:focus-within .form-icon {
 fill: var(--color-text-focus);
 }
@@ -757,10 +770,14 @@ fill: var(--color-text-focus);
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.01em;
-
-    /* color: var(--secondary-text-color); */
-    
+    transition: border-color var(--transition-duration) var(--timing-function);
 }
+
+.form-textarea:focus {
+    border-color: var(--color-button-primary); 
+}
+    
+
 
 /* Checkbox */
 .checkbox-input {
@@ -791,7 +808,7 @@ appearance: none;
     position: absolute;
     top: 50%;
     left: 12px;
-    transform: translateY(-50%);
+    transfocheckbox-terrm: translateY(-50%);
     fill: var(--bg-color-white);
     border-radius: 2px;
     transition: background-color var(--timing-function) var(--transition-duration);
@@ -809,9 +826,9 @@ color: var(--secondary-text-color);
 padding-left: 42px;
 }
 
-/* .checkbox-term {
+.checkbox-term {
     color: var(--color-text-focus);
-} */ 
+}
 /* .checkbox-control {
     position: relative;
     margin-bottom: 30px;
